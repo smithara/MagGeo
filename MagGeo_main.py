@@ -18,6 +18,8 @@ from MagGeoFunctions import Get_Swarm_residuals
 from MagGeoFunctions import ST_IDW_Process
 from MagGeoFunctions import CHAOS_ground_values
 
+# TODO
+# poetry config virtualenvs.in-project true, for editions and compiling in VsCode
 
 set_token("https://vires.services/ows", set_default=True)
 

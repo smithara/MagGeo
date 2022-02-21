@@ -13,31 +13,6 @@
 
 **Keywords** | Bird migration, data fusion, Earth’s magnetic field, Swarm, GPS tracking
 
-## Overview
-
-MagGeo is a tool that helps ecologists or animal movement researchers to link  earth's magnetic field data from satellite source to GPS trajectories. Inspired by the Environmental Data Automated Track Annotation System (Env-DATA) Service a tool from Movebank and help researcher to get a better understanding about the geomagnetic variations across the GPS trajectories.
-
-MagGeo is entirely built-in python and using a set of Jupyter Notebooks that offer several ways to link GPS tracks with the geomagnetic components using the data from one of the up-to-date satellite sources - Swarm Constellation. MagGeo will create an enriched GPS track with the following components:
-
-- **Latitude** from the GPS Track.
-- **Longitude** from the GPS Track.
-- **Timestamp** from the GPS Track.
-- **Magnetic Field Intensity** mapped as Fgps in nanoTeslas (nT).
-- **N (Northwards) component** mapped as N in nanoTeslas (nT).
-- **E (Eastwards) component** mapped as E. in nanoteslas (nT).
-- **C (Downwards or Center)** component mapped as C in nanoTeslas (nT).
-- **Horizontal component** mapped as H in nanoTeslas (nT).
-- **Magnetic Declination or dip angle** mapped as D in degrees
-- **Magnetic Inclination** mapped as I in degrees
-- **Kp Index** mapped as kp
-- **Total Points** as the amount of Swarm measures included in the ST-IDW process from the trajectories requested in the three satellites.
-- **Minimum Distance** mapped as MinDist, representing the minimum distance amount the set of identified point inside the Space Time cylinder and each GPS point location.
-- **Average Distance** mapped as AvDist, representing the average distance amount the set of distances between the identified Swarm Point in the Space Time cylinder and the GPS Points location.
-
-Researchers, particularly ecologists now can study the annotated table to analyze the geomagnetic Spatio-temporal variation across any GPS trajectory.
-
-<img src="./images/GitHubImage.png">
-
 ## How to install and Run MagGeo on your machine
 
 To install and run MagGeo you need to follow the following steps.
@@ -141,14 +116,40 @@ poetry run python MagGeo_SA.py -p parameters/default.yml
 
 MagGeo includes a set of Jupyter Notebooks, you will find four notebooks (.ipynp).
 
-* [Main Notebook](https://github.com/MagGeo/MagGeo-Annotation-Program/blob/master/MagGeo%20-%20Home.ipynb) : An initial and descriptive notebook where you can get detail information about MagGeo, the sample data used, background concepts and software requirements.
-* [Sequential Mode](https://github.com/MagGeo/MagGeo-Annotation-Program/blob/master/MagGeo%20-%20Sequential%20Mode.ipynb): Annotation Notebook applying a sequential mode. Using  a traditional loop to going through the GPS track rows and process every row computing the magnetic components. Particularly useful for small datasets.
-* [Parallel Mode](https://github.com/MagGeo/MagGeo-Annotation-Program/blob/master/MagGeo%20-%20Parallel%20Mode.ipynb):  If you have a "big" dataset ( e.g. 1 million of records) you might want try the parallel mode. The parallel mode has some differences when you run the required libraries in a windows or Linux environment. We have tested **MagGeo** in a windows server environment.
-* [Notebook basics](https://github.com/MagGeo/MagGeo-Annotation-Program/blob/master/Notebook%20-%20Basics.ipynb): If you are not familiar with Jupiter Notebooks and want to learn about the basics over how to run the notebooks before try the annotate tool. You can try this notebook to get the basics elements to run cells, read data, and plot some a basic chart.
+* [Main Notebook](./Notebooks/MagGeo - Home.ipynb) : An initial and descriptive notebook where you can get detail information about MagGeo, the sample data used, background concepts and software requirements.
+* [Sequential Mode](./Notebooks/MagGeo - Sequential Mode.ipynb): Annotation Notebook applying a sequential mode. Using  a traditional loop to going through the GPS track rows and process every row computing the magnetic components. Particularly useful for small datasets.
+* [Parallel Mode](./Notebooks/MagGeo - Parallel Mode.ipynb):  If you have a "big" dataset ( e.g. 1 million of records) you might want try the parallel mode. The parallel mode has some differences when you run the required libraries in a windows or Linux environment. We have tested **MagGeo** in a windows server environment.
+* [Notebook basics](./Notebooks/Notebook - Basics.ipynb): If you are not familiar with Jupiter Notebooks and want to learn about the basics over how to run the notebooks before try the annotate tool. You can try this notebook to get the basics elements to run cells, read data, and plot some a basic chart.
 
 The following image will help you to understand how the sequential and parallel mode differ, and how in parallel mode you should be able to use the full capacity of your machine. However it is quite important to identify when we need to use a parallel mode. For small datasets running **MagGeo** in Parallel mode could be even slower than the sequential mode.
 
 <img src="./images/Sequential_ParallelMode-Jupyter.png">
+
+## Overview
+
+MagGeo is a tool that helps ecologists or animal movement researchers to link  earth's magnetic field data from satellite source to GPS trajectories. Inspired by the Environmental Data Automated Track Annotation System (Env-DATA) Service a tool from Movebank and help researcher to get a better understanding about the geomagnetic variations across the GPS trajectories.
+
+MagGeo is entirely built-in python and using a set of Jupyter Notebooks that offer several ways to link GPS tracks with the geomagnetic components using the data from one of the up-to-date satellite sources - Swarm Constellation. MagGeo will create an enriched GPS track with the following components:
+
+- **Latitude** from the GPS Track.
+- **Longitude** from the GPS Track.
+- **Timestamp** from the GPS Track.
+- **Magnetic Field Intensity** mapped as Fgps in nanoTeslas (nT).
+- **N (Northwards) component** mapped as N in nanoTeslas (nT).
+- **E (Eastwards) component** mapped as E. in nanoteslas (nT).
+- **C (Downwards or Center)** component mapped as C in nanoTeslas (nT).
+- **Horizontal component** mapped as H in nanoTeslas (nT).
+- **Magnetic Declination or dip angle** mapped as D in degrees
+- **Magnetic Inclination** mapped as I in degrees
+- **Kp Index** mapped as kp
+- **Total Points** as the amount of Swarm measures included in the ST-IDW process from the trajectories requested in the three satellites.
+- **Minimum Distance** mapped as MinDist, representing the minimum distance amount the set of identified point inside the Space Time cylinder and each GPS point location.
+- **Average Distance** mapped as AvDist, representing the average distance amount the set of distances between the identified Swarm Point in the Space Time cylinder and the GPS Points location.
+
+Researchers, particularly ecologists now can study the annotated table to analyze the geomagnetic Spatio-temporal variation across any GPS trajectory.
+
+<img src="./images/GitHubImage.png">
+
 
 ## Problems?, Suggestions? - Contact us
 

@@ -44,11 +44,11 @@ To install and run MagGeo you need to follow the following steps.
 
 ### 1. Install Poetry
 
-MagGeo use Poetry a tool for dependency management and packaging in Python. It allows MagGeo to use the tested libraries/dependencies requeried.
+MagGeo use **Poetry** a tool for dependency management and packaging in Python. It allows MagGeo to use the tested libraries/dependencies requeried.
 
-Open a Terminal, go to [https://python-poetry.org/docs/#installation](https://python-poetry.org/docs/#installation), follow the install instructions that suits to your enviroment [OSX/Unix/Windows}.
+**Open a Terminal**, go to [https://python-poetry.org/docs/#installation](https://python-poetry.org/docs/#installation), follow the install instructions that suits to your enviroment [OSX/Unix/Windows}.
 
-For instance on Febrary 2022 the command use was the following (We recommend to visit the previous link to make sure you get the rigth command):
+For instance on Febrary 2022 the command used was the following (We recommend to visit the previous link to make sure you get the rigth command):
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
@@ -60,21 +60,19 @@ To make sure you get Poetry correctly installed, try out:
 poetry --version
 ```
 
-If you see something like `Poetry 0.12.0` then you are ready to clone the MagGeo repo.
-
-Close the terminal
+If you see something like `Poetry 0.12.0` then you are ready to clone the MagGeo repo. Now **Close the terminal**
 
 ### 2. Clone the MagGeo repository:
 
-Open a new terminal and run:
+**Open a new Terminal** and clone the repo branch **poetry_stable**:
 
 ```bash
-git clone https://github.com/MagGeo/MagGeo-Annotation-Program.git
+git clone -b poetry_stable https://github.com/MagGeo/MagGeo-Annotation-Program.git
 ```
 
 ### 3. Change the directory
 
-You will need to change the directory to where you cloned/downloaded the MagGeo repository. If you donwloaded it--Do not forget to unzip the folder before using it.
+You will need to change the directory to where you cloned the MagGeo branch. If you donwloaded it--Do not forget to unzip the folder before using it.
 If you're using the terminal on Linux or macOS, it is the same syntax to change directory.
 
 ```bash
@@ -83,7 +81,7 @@ cd MagGeo-Annotation-Program
 
 ### 4. Install the dependencies -- this shouldn't take more than a minute.
 
-Now we are going to use Poetry to get all the libraries/dependecnies MagGeo needs. Run  the following command.
+Now we are going to use Poetry to get all the dependecnies MagGeo needs. Run  the following command.
 
 ```
 poetry install
@@ -100,13 +98,13 @@ poetry install
 
 ### 6. Run MagGeo using the sample data.
 
-MagGeo can be excuted using the same terminal you have been using in the previous steps. If you want to get familiar with MagGeo and get an annotated GPS trajectory using the data we have included as an example (data folder), run the following command:
+MagGeo can be excuted using the same terminal you have been using in the previous step. If you want to get familiar with MagGeo and get an annotated GPS trajectory using the data we have included as an example (data folder), run the following command:
 
 ```
 poetry run python MagGeo_SA.py -p parameters/default.yml
 ```
 
-After some seconds MagGeo will ask you for the VirES token, just copy and paste inside the terminal and hit Enter.
+After some seconds MagGeo will ask you for the VirES token, just copy and paste inside the terminal and hit Enter. 
 
 ![img](images/poetry_data.png)
 
@@ -114,15 +112,15 @@ Now MagGeo will start to download the Swarm Data.
 
 ![img](images/poetry_token.png)
 
-Once the data has been downloaded, MagGeo will process it to make the annotation process ( for more information about how it is done, visit [our methodological paper in Movement Ecology](https://movementecologyjournal.biomedcentral.com/track/pdf/10.1186/s40462-021-00268-4.pdf))
+Once the data has been downloaded, MagGeo will process it to run the annotation process ( for more information about how this is done, visit [our methodological paper in Movement Ecology](https://movementecologyjournal.biomedcentral.com/track/pdf/10.1186/s40462-021-00268-4.pdf))
 
-The las step MagGeo does is annotating the gathered data, that would take more time depending how big your dataset is. In our example it only takes 4 seconds.
+This is the last step that MagGeo does, that would not take long, but it will  depend on how big is your dataset. In our example it only takes 4 seconds approximatly.
 
 ![img](images/poetry_annotate.png)
 
 And **Congrats** **you got annotated data**. The results will be stored in the folder results for your futher analysis. You will find a .csv file named **GeoMagResult_+name_of_your_csv_file_trajectory.csv**
 
-#### 6.1 Run MagGeo using your data.
+### 7 Run MagGeo using your data.
 
 If you are ready to annotate your GPS trajectories. You need to update the parameters file in MagGeo and let the program know what are the correct values of your data.
 
@@ -139,7 +137,7 @@ Save your changes, return to the Terminal and run:
 poetry run python MagGeo_SA.py -p parameters/default.yml
 ```
 
-### 7. Run MagGeo cell by cell, using Jupyter Notebook.
+### 8. Run MagGeo cell by cell, using Jupyter Notebook.
 
 MagGeo includes a set of Jupyter Notebooks, you will find four notebooks (.ipynp).
 
@@ -152,6 +150,6 @@ The following image will help you to understand how the sequential and parallel 
 
 <img src="./images/Sequential_ParallelMode-Jupyter.png">
 
-# Problems?, Suggestions? - Contact us
+## Problems?, Suggestions? - Contact us
 
 **MagGeo** is work in progress and we are constantly making improvements that you call follow up with the commints made in the pubic GitHub repo. For general enquiries, scientific concepts, suggestions, bugs or improvements using **MagGeo** please email: [Fernando.Benitez@st-andrews.ac.uk](mailto:Fernando.Benitez@st-andrews.ac.uk), [ud2@st-andrews.ac.uk](mailto:ud2@st-andrews.ac.uk), <jed.long@uwo.ca>

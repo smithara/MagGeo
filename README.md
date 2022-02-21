@@ -108,23 +108,23 @@ poetry run python MagGeo_SA.py -p parameters/default.yml
 
 After some seconds MagGeo will ask you for the VirES token, just copy and paste inside the terminal and hit Enter.
 
-![img](images\poetry_data.png)
+![img](images/poetry_data.png)
 
 Now MagGeo will start to download the Swarm Data.
 
-![img](images\poetry_token.png)
+![img](images/poetry_token.png)
 
 Once the data has been downloaded, MagGeo will process it to make the annotation process ( for more information about how it is done, visit [our methodological paper in Movement Ecology](https://movementecologyjournal.biomedcentral.com/track/pdf/10.1186/s40462-021-00268-4.pdf))
 
 The las step MagGeo does is annotating the gathered data, that would take more time depending how big your dataset is. In our example it only takes 4 seconds.
 
-![img](images\poetry_annotate.png)
+![img](images/poetry_annotate.png)
 
-And **Congrats** **you got annotated data**. The results will be stored in the folder results for your futher analysis. You will find a .csv file named like **GeoMagResult_+name_of_your_csv_file_trajectory.**
+And **Congrats** **you got annotated data**. The results will be stored in the folder results for your futher analysis. You will find a .csv file named **GeoMagResult_+name_of_your_csv_file_trajectory.csv**
 
 #### 6.1 Run MagGeo using your data.
 
-If you are redy to annotate your GPS trajectories. You need to update the parameters file in MagGeo to let the program know what are the correct values of your data.
+If you are ready to annotate your GPS trajectories. You need to update the parameters file in MagGeo and let the program know what are the correct values of your data.
 
 * Open and Update the following parameters in the file `default.yml` located in parameters folder:
 * `gpsfilename: "name_of_your_csv_trayectory.cvs"` Include the name of your Input data. The GPS trayectory you need to annotate with the geomagnetic satellite data.

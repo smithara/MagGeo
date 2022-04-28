@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.4">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>MagGeo - Documentation - Home</title>
+  <title>MagGeo - Documentation - Troubleshooting</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -58,7 +58,7 @@
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Home</h1>
+      <h1 class="quarto-secondary-nav-title">Troubleshooting</h1>
       <button type="button" class="quarto-btn-toggle btn">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -83,7 +83,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Home</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Home</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -101,7 +101,7 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">Troubleshooting</a>
+  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link active">Troubleshooting</a>
   </div>
 </li>
     </ul>
@@ -134,19 +134,27 @@
         <nav id="TOC" role="doc-toc">
 <h2 id="toc-title">On this page</h2>
 <ul>
-<li><a href="#maggeo" class="nav-link active" data-scroll-target="#maggeo">MagGeo</a></li>
+<li><a href="#troubleshooting" class="nav-link active" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">Home</h1>
+<h1 class="title d-none d-lg-block display-7">Troubleshooting</h1>
 </header>
 
-<section id="maggeo" class="level2">
-<h2 class="anchored" data-anchor-id="maggeo">MagGeo</h2>
-<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
+<section id="troubleshooting" class="level1">
+<h1>Troubleshooting</h1>
+<ul>
+<li><p><strong>Command prompt does not find conda</strong>: After step No 3, windows users do not find conda command.</p>
+<p><strong>Cause</strong>: The miniconda/anaconda path is not included in your %PATH environment</p>
+<p><strong>Solution</strong>: Add miniconda path to Windows environment. Instructions: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/</p>
+<p>Usually located in <code>C:\ProgramData\Miniconda3\condabin</code> You should search for file <code>conda.bat</code> and copy the path where this file is.</p></li>
+<li><p><strong>Python not found</strong>: Before step step 7, for windows users in some cases python command is not found.</p>
+<p><strong>Cause</strong>: In some cases for windows users, when python is installed using MagGeoEnv, the path is not included. <strong>Solution</strong>: Add the conda python path to your environment</p>
+<p><code>C:\ProgramData\Miniconda3</code></p></li>
+</ul>
 
 
 </section>

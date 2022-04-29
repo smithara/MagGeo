@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.4">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>MagGeo - Documentation - Installation</title>
+  <title>MagGeo - Installation</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -134,7 +134,7 @@
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">MagGeo - Documentation</a> 
+      <a href="./">MagGeo</a> 
     </div>
       </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
@@ -146,7 +146,7 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Home</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">What’s MagGeo</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -164,6 +164,11 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./using_maggeo.html" class="sidebar-item-text sidebar-link">Using MagGeo</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">Troubleshooting</a>
   </div>
 </li>
@@ -171,22 +176,12 @@
   </li>
         <li class="sidebar-item sidebar-item-section">
     <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-understanding-it" aria-expanded="true">Understanding it</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-understanding-it" aria-expanded="true">
+        <a class="sidebar-item-text sidebar-link text-start " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-notebooks" aria-expanded="true">Notebooks</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-notebooks" aria-expanded="true">
         <i class="bi bi-chevron-right ms-2"></i>
       </a>
     </div>
-    <ul id="quarto-sidebar-section-understanding-it" class="collapse list-unstyled sidebar-section depth1 show">  
-    </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-    <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-extending-it" aria-expanded="true">Extending it</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-extending-it" aria-expanded="true">
-        <i class="bi bi-chevron-right ms-2"></i>
-      </a>
-    </div>
-    <ul id="quarto-sidebar-section-extending-it" class="collapse list-unstyled sidebar-section depth1 show">  
+    <ul id="quarto-sidebar-section-notebooks" class="collapse list-unstyled sidebar-section depth1 show">  
     </ul>
   </li>
     </ul>
@@ -205,10 +200,6 @@
 <li><a href="#create-maggeoenv-environment-this-should-take-around-five-minutes." class="nav-link" data-scroll-target="#create-maggeoenv-environment-this-should-take-around-five-minutes.">4. Create MagGeoEnv environment – this should take around five minutes.</a></li>
 <li><a href="#activate-maggeoenv" class="nav-link" data-scroll-target="#activate-maggeoenv">5. Activate MagGeoEnv</a></li>
 <li><a href="#sign-up-at-vires-for-swarm---vre-and-get-a-web-client-token" class="nav-link" data-scroll-target="#sign-up-at-vires-for-swarm---vre-and-get-a-web-client-token">6. Sign Up at VirES for Swarm - VRE and get a web client Token</a></li>
-<li><a href="#run-maggeo-using-the-sample-data." class="nav-link" data-scroll-target="#run-maggeo-using-the-sample-data.">7. Run MagGeo using the sample data.</a>
-<ul class="collapse">
-<li><a href="#run-maggeo-using-your-data." class="nav-link" data-scroll-target="#run-maggeo-using-your-data.">7.1 Run MagGeo using your data.</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -258,44 +249,8 @@
 <li>Follow the instructions in <a href="https://viresclient.readthedocs.io/en/latest/access_token.html">https://viresclient.readthedocs.io/en/latest/access_token.html</a> to get your token.</li>
 <li>Copy and Paste your token after –token in the following command</li>
 </ol>
-</section>
-<section id="run-maggeo-using-the-sample-data." class="level2">
-<h2 class="anchored" data-anchor-id="run-maggeo-using-the-sample-data.">7. Run MagGeo using the sample data.</h2>
-<p>MagGeo can be excuted using the same terminal you have been using in the previous steps. If you want to get familiar with MagGeo and get an annotated GPS trajectory using the data we have included as an example (data folder), run the following command (replace your virES token where is requiered):</p>
-<pre><code>python MagGeo_main.py -p parameters/default.yml --token YOUR_TOKEN_HERE</code></pre>
-<p>Now MagGeo will start to download the Swarm Data.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/poetry_data.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">img</figcaption><p></p>
-</figure>
-</div>
-<p>Once the data has been downloaded, MagGeo will process it to make the annotation process ( for more information about how this is done, visit <a href="https://movementecologyjournal.biomedcentral.com/track/pdf/10.1186/s40462-021-00268-4.pdf">our methodological paper in Movement Ecology</a>)</p>
-<p>The last step MagGeo does is annotating the gathered data, that would take more time depending how big is your dataset. In our example it only takes 4 seconds.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/poetry_annotate.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">img</figcaption><p></p>
-</figure>
-</div>
-<p>And <strong>Congrats</strong> <strong>you got annotated data</strong>. The results will be stored in the folder results for your futher analysis. You will find a .csv file named like <strong>GeoMagResult_+name_of_your_csv_file_trajectory.</strong></p>
-<section id="run-maggeo-using-your-data." class="level3">
-<h3 class="anchored" data-anchor-id="run-maggeo-using-your-data.">7.1 Run MagGeo using your data.</h3>
-<p>If you are ready to annotate your GPS trajectories. You need to update the parameters file in MagGeo to let the program know what are the correct values of your data.</p>
-<ul>
-<li>Copy the csv file with your trajectories into the data folder.</li>
-<li>Open and Update the following parameters in the file <code>default.yml</code> located in parameters folder:</li>
-<li><code>gpsfilename: "name_of_your_trajectory.cvs"</code> Include the name of your Input data. The GPS trajectory you need to annotate with the geomagnetic satellite data.</li>
-<li><code>Lat: "latitude_column_name_in_your_trajectory"</code></li>
-<li><code>Long: "longitude_column_name_in_your_trajectory"</code></li>
-<li><code>DateTime: "Date_Time_column_name_in_your_trajectory"</code> make sure you have one column that includes Date and Time values together.</li>
-<li><code>altitude: "altitude_column_name_in_your_trajectory"</code> if you do not have any altitute column, you can leave that in blank, including only <code>""</code></li>
-</ul>
-<p>Save your changes, return to the Terminal and run:</p>
-<pre><code>python MagGeo_main.py -p parameters/default.yml --token YOUR_TOKEN_HERE</code></pre>
 
 
-</section>
 </section>
 </section>
 </main> <!-- /main -->

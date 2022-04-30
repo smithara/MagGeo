@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.4">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>MagGeo: Data fusion tool to combine magnetic data with GPS trajectories - Troubleshooting</title>
+  <title>MagGeo: Data fusion tool to combine magnetic data with GPS trajectories - Calculation of Magnetic Components</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -58,7 +58,7 @@
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Troubleshooting</h1>
+      <h1 class="quarto-secondary-nav-title">Calculation of Magnetic Components</h1>
       <button type="button" class="quarto-btn-toggle btn">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -106,7 +106,7 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link active">Troubleshooting</a>
+  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">Troubleshooting</a>
   </div>
 </li>
     </ul>
@@ -126,7 +126,7 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./calculation_mag_components.html" class="sidebar-item-text sidebar-link">Calculation of Magnetic Components</a>
+  <a href="./calculation_mag_components.html" class="sidebar-item-text sidebar-link active">Calculation of Magnetic Components</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -169,16 +169,19 @@
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">Troubleshooting</h1>
+<h1 class="title d-none d-lg-block display-7">Calculation of Magnetic Components</h1>
 </header>
+<p><img src="./images/VerticalContributionsMagneticField.png" style="width:500px;height:300px;float: left; margin-right: 1em;margin-bottom: 1em;"> Swarm data provide information on the earth’s magnetic field at the orbit level, which is above the ionosphere, where geomagnetic field is affected by the electrical currents induced by the interaction of the solar wind and magnetosphere ( see the figure above to understand the vertical contributions of the earth’ magentic field). This means that to obtain the values of the magnetic field on the Earth’s surface where animals are migrating, the raw measurements from Swarm need to be corrected removing the effects from the modeled values from core, crust and magnetosphere. We do this in three steps. <strong>1.</strong> We download the swarm residuals for the GPS date, getting essentially the unmodelled ionospheric field contribution that we haven’t captured in any of the other models. <strong>2.</strong> because at the ground level the core and crust contriutiosn are stringen than the ones at the satellite altitude, We use the CHAOS model to compute the core, crust and magnetoshpere contributions for the particular, latitude, longitude, datetime and altitude of each GPS point. <strong>3.</strong> Finally we add those values modelled by CHAOS values with the Swarm resiuals, computing a comprenhensive magneitc values than include the stronger core and crust contributions and the unmodellled values from the satellite altitude that capture all the inoshpere field contributions. For details of this correction see Supplementary Information 1 in our main paper.</p>
+<p><img src="./images/IonosphericCorrections.png" style="width:700px;height:400px"></p>
+<div class="alert alert-warning" role="alert">
+<p><strong>🔎 CHAOS: </strong> It is a comprehensive field model, containing the modelled contributions of the time-varying core, the static crustal field, the average time-varying magnetosphere. We show calculation of the residuals (adding this parameter <code>residuals=True</code>) which means: data - <code>CHAOS(Core+Static+Magnetosphere)</code>.</p>
+</div>
+<p>The <strong>CHAOS</strong> model is available on the server as model variables:</p>
 <ul>
-<li><p><strong>Command prompt does not find conda</strong>: After step No 3, windows users do not find conda command.</p>
-<p><strong>Cause</strong>: The miniconda/anaconda path is not included in your %PATH environment</p>
-<p><strong>Solution</strong>: Add miniconda path to Windows environment. Instructions: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/</p>
-<p>Usually located in <code>C:\ProgramData\Miniconda3\condabin</code> You should search for file <code>conda.bat</code> and copy the path where this file is.</p></li>
-<li><p><strong>Python not found</strong>: Before step step 7, for windows users in some cases python command is not found.</p>
-<p><strong>Cause</strong>: In some cases for windows users, when python is installed using MagGeoEnv, the path is not included. <strong>Solution</strong>: Add the conda python path to your environment</p>
-<p><code>C:\ProgramData\Miniconda3</code></p></li>
+<li>CHAOS-Core: SH degree 1-20</li>
+<li>CHAOS-Static: SH degree 21-110</li>
+<li>CHAOS-MMA-Primary: Magnetosphere external field, SH degree 1-2</li>
+<li>CHAOS-MMA-Secondary: Magnetosphere internal induced field, SH degree 1-2</li>
 </ul>
 
 

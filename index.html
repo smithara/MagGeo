@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.4">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>MagGeo: Data fusion tool to combine magnetic data with GPS trajectories - Home</title>
+  <title>MagGeo: Data fusion tool to combine magnetic data with GPS trajectories - What’s MagGeo</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -53,12 +53,12 @@
   <![endif]-->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="docked">
+<body class="floating">
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Home</h1>
+      <h1 class="quarto-secondary-nav-title">What’s MagGeo</h1>
       <button type="button" class="quarto-btn-toggle btn">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -68,7 +68,7 @@
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">MagGeo: Data fusion tool to combine magnetic data with GPS trajectories</a> 
@@ -83,17 +83,17 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Home</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">What’s MagGeo</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
     <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-using-it" aria-expanded="true">Using it</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-using-it" aria-expanded="true">
+        <a class="sidebar-item-text sidebar-link text-start " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-how-to-use-it" aria-expanded="true">How to use it</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-how-to-use-it" aria-expanded="true">
         <i class="bi bi-chevron-right ms-2"></i>
       </a>
     </div>
-    <ul id="quarto-sidebar-section-using-it" class="collapse list-unstyled sidebar-section depth1 show">  
+    <ul id="quarto-sidebar-section-how-to-use-it" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installation.html" class="sidebar-item-text sidebar-link">Installation</a>
@@ -113,6 +113,36 @@
   </li>
         <li class="sidebar-item sidebar-item-section">
     <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-the-science-behind" aria-expanded="true">The science behind</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-the-science-behind" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-the-science-behind" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">Introducction</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./calculation_mag_components.html" class="sidebar-item-text sidebar-link">Calculation of Magnetic Components</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./how_does_it_works.html" class="sidebar-item-text sidebar-link">How MagGeo Works</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_requeriments.html" class="sidebar-item-text sidebar-link">Data requirements</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
         <a class="sidebar-item-text sidebar-link text-start " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-notebooks" aria-expanded="true">Notebooks</a>
       <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-notebooks" aria-expanded="true">
         <i class="bi bi-chevron-right ms-2"></i>
@@ -122,6 +152,11 @@
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./SequentialMode.html" class="sidebar-item-text sidebar-link">MagGeo - Sequential Mode</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ParallelMode.html" class="sidebar-item-text sidebar-link">MagGeo - Parallel Mode</a>
   </div>
 </li>
     </ul>
@@ -134,19 +169,16 @@
         <nav id="TOC" role="doc-toc">
 <h2 id="toc-title">On this page</h2>
 <ul>
-<li><a href="#whats-maggeo" class="nav-link active" data-scroll-target="#whats-maggeo">What’s MagGeo</a></li>
-<li><a href="#problems-suggestions---contact-us" class="nav-link" data-scroll-target="#problems-suggestions---contact-us">Problems? Suggestions? - Contact us</a></li>
+<li><a href="#problems-suggestions---contact-us" class="nav-link active" data-scroll-target="#problems-suggestions---contact-us">Problems? Suggestions? - Contact us</a></li>
 </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">Home</h1>
+<h1 class="title d-none d-lg-block display-7">What’s MagGeo</h1>
 </header>
 
-<section id="whats-maggeo" class="level1">
-<h1>What’s MagGeo</h1>
 <p><img src="./images/GitHubImage2.png"></p>
 <p>MagGeo is a tool that helps ecologists or animal movement researchers to link earth’s magnetic field data from satellite source to GPS trajectories. Inspired by the Environmental Data Automated Track Annotation System (Env-DATA) Service a tool from Movebank and help researcher to get a better understanding about the geomagnetic variations across the GPS trajectories.</p>
 <p>MagGeo is entirely built-in python and using a set of Jupyter Notebooks that offer several ways to link GPS tracks with the geomagnetic components using the data from one of the up-to-date satellite sources - Swarm Constellation. MagGeo will create an enriched GPS track with the following components:</p>
@@ -167,7 +199,6 @@
 <li><strong>Average Distance</strong> mapped as AvDist, representing the average distance amount the set of distances between the identified Swarm Point in the Space Time cylinder and the GPS Points location.</li>
 </ul>
 <p>Researchers, particularly ecologists now can study the annotated table to analyze the geomagnetic Spatio-temporal variation across any GPS trajectory.</p>
-</section>
 <section id="problems-suggestions---contact-us" class="level1">
 <h1>Problems? Suggestions? - Contact us</h1>
 <p><strong>MagGeo</strong> is work in progress and we are constantly making improvements that you can follow up with the commits made in the pubic GitHub repo. For general enquiries, scientific concepts, suggestions please email: <a href="mailto:fbenitez@turing.ac.uk">fbenitez@turing.ac.uk</a>, <a href="mailto:ud2@st-andrews.ac.uk">ud2@st-andrews.ac.uk</a>, <a href="mailto:jed.long@uwo.ca">jed.long@uwo.ca</a></p>

@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.4">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>MagGeo: Data fusion tool to combine magnetic data with GPS trajectories - Troubleshooting</title>
+  <title>MagGeo: Data fusion tool to combine magnetic data with GPS trajectories - Data requirements</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -53,12 +53,12 @@
   <![endif]-->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="floating fullcontent">
+<body class="floating">
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Troubleshooting</h1>
+      <h1 class="quarto-secondary-nav-title">Data requirements</h1>
       <button type="button" class="quarto-btn-toggle btn">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -106,7 +106,7 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link active">Troubleshooting</a>
+  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">Troubleshooting</a>
   </div>
 </li>
     </ul>
@@ -136,7 +136,7 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_requeriments.html" class="sidebar-item-text sidebar-link">Data requirements</a>
+  <a href="./data_requeriments.html" class="sidebar-item-text sidebar-link active">Data requirements</a>
   </div>
 </li>
     </ul>
@@ -165,23 +165,35 @@
     </div>
 </nav>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#dataset-used-as-use-case" class="nav-link active" data-scroll-target="#dataset-used-as-use-case">Dataset used as use-case</a></li>
+</ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">Troubleshooting</h1>
+<h1 class="title d-none d-lg-block display-7">Data requirements</h1>
 </header>
-<ul>
-<li><p><strong>Command prompt does not find conda</strong>: After step No 3, windows users do not find conda command.</p>
-<p><strong>Cause</strong>: The miniconda/anaconda path is not included in your %PATH environment</p>
-<p><strong>Solution</strong>: Add miniconda path to Windows environment. Instructions: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/</p>
-<p>Usually located in <code>C:\ProgramData\Miniconda3\condabin</code> You should search for file <code>conda.bat</code> and copy the path where this file is.</p></li>
-<li><p><strong>Python not found</strong>: Before step step 7, for windows users in some cases python command is not found.</p>
-<p><strong>Cause</strong>: In some cases for windows users, when python is installed using MagGeoEnv, the path is not included. <strong>Solution</strong>: Add the conda python path to your environment</p>
-<p><code>C:\ProgramData\Miniconda3</code></p></li>
-</ul>
+
+<div class="alert alert-warning" role="alert">
+<p><strong>🔎 Your trajectory must be in a csv format:</strong></p>
+<p>There are three columns that must be included in your GPS trajectory. Make sure your GPS trajectory includes <strong>Latitude</strong> , <strong>Longitude</strong> and <strong>timestamp</strong>. We suggest that the Timestamp column follow the day/month/year Hour:Minute (<strong>dd/mm/yyyy HH:MM:SS</strong>) format, Latitude and Longitude should be in decimal degrees (WGS84). If you have a <strong>altitude</strong> attribute, make sure that the units are in kilometers. Other columns will be ignored. Here it is an example of how your GPS track should looks like.</p>
+<p><img src="./images/TableExample.png"></p>
+<p>For this example we are reading the <strong>BirdGPSTrajectory.csv</strong> file. If you want to run the method using your own csv file, make sure you store your the file in the <code>./data</code> folder. For more information about the dataset we used in this example go to the Main Notebook.</p>
+</div>
+<section id="dataset-used-as-use-case" class="level1">
+<h1>Dataset used as use-case</h1>
+<p>MagGeo comes with a dataset for the use case you see in the notebook outputs. This dataset comes from the MoveBank Data Repository (https://www.datarepository.movebank.org/)[1][2].</p>
+<p>We annotated tracking data of greater white-fronted geese (Anser albifrons), which migrate between northern Germany and the Russian Arctic. We annotated data for fifteen individuals in a single autumn migration (42 days) a total of 973 GPS location.</p>
+<p>[1]Kölzsch A, Müskens GJDM, Kruckenberg H, Glazov P, Weinzierl R, Nolet BA, Wikelski M (2016) Towards a new understanding of migration timing: slower spring than autumn migration in geese reflects different decision rules for stopover use and departure. Oikos. doi:10.1111/oik.03121</p>
+<p>[2]Kölzsch A, Kruckenberg H, Glazov P, Müskens GJDM, Wikelski M (2016) Data from: Towards a new understanding of migration timing: slower spring than autumn migration in geese reflects different decision rules for stopover use and departure. Movebank Data Repository. doi:10.5441/001/1.31c2v92f</p>
 
 
+</section>
 </main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

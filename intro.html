@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.4">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>MagGeo: Data fusion tool to combine magnetic data with GPS trajectories - Troubleshooting</title>
+  <title>MagGeo: Data fusion tool to combine magnetic data with GPS trajectories - Introducction</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -58,7 +58,7 @@
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Troubleshooting</h1>
+      <h1 class="quarto-secondary-nav-title">Introducction</h1>
       <button type="button" class="quarto-btn-toggle btn">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -106,7 +106,7 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link active">Troubleshooting</a>
+  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">Troubleshooting</a>
   </div>
 </li>
     </ul>
@@ -121,7 +121,7 @@
     <ul id="quarto-sidebar-section-the-science-behind" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">Introducction</a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active">Introducction</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -169,17 +169,17 @@
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">Troubleshooting</h1>
+<h1 class="title d-none d-lg-block display-7">Introducction</h1>
 </header>
+<p>Inspired by The Environmental Data Automated Track Annotation System (Env-DATA) Service a tool on Movebank, where ecologists and animal movement researchers all over the world can link movement data with global environmental datasets. Including hundreds of variables from a diverse set of data sources including the European Space Agency (ESA), the National Aeronautics and Space Administration (NASA), the US National Oceanic and Atmospheric Administration (NOAA), and others. EnvData allow researchers to annotate in space and time multiples environmental information to enrich their GPS tracks to analyze the influence of several environmental variables in the trajectory. Using the <a href="https://www.movebank.org/cms/movebank-content/env-data-track-annotation">Env-DATA Track Annotation Service</a> registered users on MoveBank are able to get environmental parameters—such as wind conditions, land use, vegetation, and snow cover—for the whole world. Using different interpolation methods users can include multiple environment variables selecting from a comprehensive list of datasets (you can browse the available dataset <a href="https://www.movebank.org/cms/movebank-content/envdata-products">here</a>).</p>
+<p>The second element that inspired <strong>MagGeo</strong> is having a tool to help researcher to get a better understanding over how the earth’s magnetic field is being used by birds as one of their navigational strategies. Despite of there are several approach in this regards we know still have little knowledge about how birds can use the influence of the magnetic field for their migration patterns, especially for those long-distance migratory animals. Other studies have been reflecting into the magnetic field influence based on magnetic field estimation models, or using some displacement experiments with particular species. The disadvantage of those previous studies is the magnetic field is a highly dynamic force that have different impact around the earth every day. Having said that MagGeo wants to take advantage of what is considered best survey of the geomagnetic field and its temporal evolution - Swarm Constellation. Swarm is a ESA’s magnetic field mission, launched on 22 November 2013, consists of the three identical <strong>Swarm satellites</strong> (<strong>A</strong>lpha, <strong>B</strong>ravo, and <strong>C</strong>harlie). Swarm A and C flying side-by-side (1.4° separation in longitude) at an altitude of 462 km (initial altitude) and Swarm B at higher orbit of 511 km (initial altitude) are equipped with the following set of <a href="https://earth.esa.int/web/guest/missions/esa-eo-missions/swarm/instruments-overview">identical instruments</a>.</p>
+<p>The data products available from Swarm are Level 1b and Swarm Level 2 products. These products include Swarm magnetic field models, ionospheric and thermospheric products, and others. MagGeo use the Swarm Level 1b data product as the corrected and formatted output from each of the three Swarm satellites. For more information about the Swarm Data Products click <a href="https://earth.esa.int/web/guest/missions/esa-eo-missions/swarm/data-handbook">here</a>.</p>
+<p>MagGeo has been deployed using a set of Jupyter notebooks a powerful tool to run a python environment. Completely build in python 3.8 MagGeo is a well described program that will guide you through several steps to annotate your GPS trajectories with the geomagnetic field components reported by Swarm. You can access to Swarm Data products via HTTP or FTP using :</p>
 <ul>
-<li><p><strong>Command prompt does not find conda</strong>: After step No 3, windows users do not find conda command.</p>
-<p><strong>Cause</strong>: The miniconda/anaconda path is not included in your %PATH environment</p>
-<p><strong>Solution</strong>: Add miniconda path to Windows environment. Instructions: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/</p>
-<p>Usually located in <code>C:\ProgramData\Miniconda3\condabin</code> You should search for file <code>conda.bat</code> and copy the path where this file is.</p></li>
-<li><p><strong>Python not found</strong>: Before step step 7, for windows users in some cases python command is not found.</p>
-<p><strong>Cause</strong>: In some cases for windows users, when python is installed using MagGeoEnv, the path is not included. <strong>Solution</strong>: Add the conda python path to your environment</p>
-<p><code>C:\ProgramData\Miniconda3</code></p></li>
+<li>via any HTTP browser at <a href="http://swarm-diss.eo.esa.int/">http://swarm-diss.eo.esa.int</a></li>
+<li>directly via an ftp client at <a href="ftp://swarm-diss.eo.esa.int/">ftp://swarm-diss.eo.esa.int</a></li>
 </ul>
+<p>However <strong>MagGeo</strong> use <a href="https://swarm-vre.readthedocs.io/en/latest/Swarm_notebooks/02a__Intro-Swarm-viresclient.html"><strong>VirES</strong></a> (Virtual environments for Earth Scientists) a platform for data &amp; model access, analysis, and visualisation for ESA’s magnetic mission <strong>Swarm</strong>. This is a powerful client with the <a href="https://swarm-vre.readthedocs.io/en/latest/Swarm_notebooks/02c__viresclient-API.html">viresclient API</a> that provide several classes and methods defined in the vires client package. The <code>viresclient</code> Python package allows you to connect to the VirES server to download <a href="https://earth.esa.int/web/guest/missions/esa-operational-eo-missions/swarm">Swarm</a> data and data calculated using magnetic models.</p>
 
 
 </main> <!-- /main -->

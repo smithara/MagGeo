@@ -116,7 +116,7 @@
   <![endif]-->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="docked fullcontent">
+<body class="floating fullcontent">
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -131,7 +131,7 @@
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">MagGeo: Data fusion tool to combine magnetic data with GPS trajectories</a> 
@@ -146,17 +146,17 @@
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Home</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">What’s MagGeo</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
     <div class="sidebar-item-container"> 
-        <a class="sidebar-item-text sidebar-link text-start " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-using-it" aria-expanded="true">Using it</a>
-      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-using-it" aria-expanded="true">
+        <a class="sidebar-item-text sidebar-link text-start " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-how-to-use-it" aria-expanded="true">How to use it</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-how-to-use-it" aria-expanded="true">
         <i class="bi bi-chevron-right ms-2"></i>
       </a>
     </div>
-    <ul id="quarto-sidebar-section-using-it" class="collapse list-unstyled sidebar-section depth1 show">  
+    <ul id="quarto-sidebar-section-how-to-use-it" class="collapse list-unstyled sidebar-section depth1 show">  
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installation.html" class="sidebar-item-text sidebar-link">Installation</a>
@@ -176,6 +176,36 @@
   </li>
         <li class="sidebar-item sidebar-item-section">
     <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-the-science-behind" aria-expanded="true">The science behind</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-the-science-behind" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-the-science-behind" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">Introducction</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./calculation_mag_components.html" class="sidebar-item-text sidebar-link">Calculation of Magnetic Components</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./how_does_it_works.html" class="sidebar-item-text sidebar-link">How MagGeo Works</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_requeriments.html" class="sidebar-item-text sidebar-link">Data requirements</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
         <a class="sidebar-item-text sidebar-link text-start " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-notebooks" aria-expanded="true">Notebooks</a>
       <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-notebooks" aria-expanded="true">
         <i class="bi bi-chevron-right ms-2"></i>
@@ -185,6 +215,11 @@
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./SequentialMode.html" class="sidebar-item-text sidebar-link active">MagGeo - Sequential Mode</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ParallelMode.html" class="sidebar-item-text sidebar-link">MagGeo - Parallel Mode</a>
   </div>
 </li>
     </ul>
@@ -211,7 +246,7 @@
 <div class="alert alert-warning" role="alert">
 <p><strong>🔎 Your trajectory must be in a csv format:</strong></p>
 <p>There are three columns that must be included in your GPS trajectory. Make sure your GPS trajectory includes <strong>Latitude</strong> , <strong>Longitude</strong> and <strong>timestamp</strong>. We suggest that the Timestamp column follow the day/month/year Hour:Minute (<strong>dd/mm/yyyy HH:MM:SS</strong>) format, Latitude and Longitude should be in decimal degrees (WGS84). Optionally an altitude column can be used providing altitude (the altitude must be in <strong>km</strong>). Other Columns will be ignored. Here it is an example of how your GPS track should look:</p>
-<p><img src="../images/TableExample.png"></p>
+<p><img src="./images/TableExample.png"></p>
 <p>For this example we are reading the <strong>BirdGPSTrajectory.csv</strong> file. If you want to run the method using your own csv file, make sure you store your the file in the <code>./data</code> folder. For more information about the dataset we used in this example go to the Main Notebook.</p>
 </div>
 </section>

@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-0.9.4">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>MagGeo: Data fusion tool to combine magnetic data with GPS trajectories - Troubleshooting</title>
+  <title>MagGeo: Data fusion tool to combine magnetic data with GPS trajectories - Background</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -53,12 +53,12 @@
   <![endif]-->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="floating fullcontent">
+<body class="floating">
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Troubleshooting</h1>
+      <h1 class="quarto-secondary-nav-title">Background</h1>
       <button type="button" class="quarto-btn-toggle btn">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -106,7 +106,7 @@
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link active">Troubleshooting</a>
+  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">Troubleshooting</a>
   </div>
 </li>
     </ul>
@@ -165,23 +165,49 @@
     </div>
 </nav>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#earths-magnetic-field" class="nav-link active" data-scroll-target="#earths-magnetic-field">Earth’s Magnetic Field</a></li>
+</ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">Troubleshooting</h1>
+<h1 class="title d-none d-lg-block display-7">Background</h1>
 </header>
-<ul>
-<li><p><strong>Command prompt does not find conda</strong>: After step No 3, windows users do not find conda command.</p>
-<p><strong>Cause</strong>: The miniconda/anaconda path is not included in your %PATH environment</p>
-<p><strong>Solution</strong>: Add miniconda path to Windows environment. Instructions: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/</p>
-<p>Usually located in <code>C:\ProgramData\Miniconda3\condabin</code> You should search for file <code>conda.bat</code> and copy the path where this file is.</p></li>
-<li><p><strong>Python not found</strong>: Before step step 7, for windows users in some cases python command is not found.</p>
-<p><strong>Cause</strong>: In some cases for windows users, when python is installed using MagGeoEnv, the path is not included. <strong>Solution</strong>: Add the conda python path to your environment</p>
-<p><code>C:\ProgramData\Miniconda3</code></p></li>
-</ul>
+
+<blockquote class="blockquote">
+<p>☝ Before moving on with MagGeo you might want to take a look at the following concepts:</p>
+</blockquote>
+<section id="earths-magnetic-field" class="level1">
+<h1>Earth’s Magnetic Field</h1>
+<p><img src="./images/MagneticComponents-Jupyter.png" style="width:500px;height:400px;float: left; margin-right: 2em;margin-bottom: 1em;"> The Earth’s magnetic field (or geomagnetic field ) is generated in the fluid outer core by a self-exciting dynamo process. Electrical currents flowing in the slowly moving molten iron generate the magnetic field. In addition to sources in the Earth’s core the magnetic field observable at the Earth’s surface has sources in the crust and in the ionosphere and magnetosphere.</p>
+<p>The Earth’s magnetic field is described by seven components. These are <strong>Declination (D)</strong>, <strong>Inclination (I)</strong>, <strong>Horizontal intensity (H)</strong>, <strong>Vertical intensity (Z)</strong>, <strong>total intensity (F)</strong> and the <strong>north (X)</strong> and <strong>east (Y)</strong> components of the horizontal intensity. In most of the geomagnetic data sources the reference frame used to share the magnetic components is <strong>NEC</strong>, which is basically the same XYZ cartesian system. By convention, declination is considered positive when measured east of north, Inclination and vertical intensity positive down, X (N) positive north, and Y(E) positive east. The magnetic field observed on Earth is constantly changing.</p>
+<p>&nbsp;</p>
+&nbsp;
+<div class="alert alert-warning" role="alert">
+<p><strong>The Earth’s magnetic field varies both in space and time</strong> That is why the relevance of <strong>MagGeo</strong> helping researchers to understand the variations of the geomagnetic field across an animal movement trajectory. In particular having the annotated geomagnetic components at the the date and time the GPS point was collected. The following image can help you to understand how the geomagnetic components are represented and how they are computed.</p>
+</div>
+<p>Considering the point of measurement (<em>p</em>) as the origin of a Cartesian system of reference, the x-axis is in the geographic meridian directed to the north, y-axis in the geographic parallel directed to the east and z-axis parallel to the vertical at the point and positive downwards. Then we have:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://latex.codecogs.com/gif.latex?F=&amp;space;\sqrt%7BX%5E%7B2%7D+Y%5E%7B2%7D+Z%5E%7B2%7D%7D&amp;space;\hspace%7B1cm%7D&amp;space;or\hspace%7B1cm%7D&amp;space;F=&amp;space;\sqrt%7BN%5E%7B2%7D+E%5E%7B2%7D+C%5E%7B2%7D%7D" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">equation</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://latex.codecogs.com/gif.latex?H&amp;space;=&amp;space;\sqrt%7BN%5E%7B2%7D+E%5E%7B2%7D%7D&amp;space;-&amp;space;D&amp;space;=&amp;space;\arctan\frac%7BE%7D%7BN%7D&amp;space;-&amp;space;I&amp;space;=&amp;space;\arctan\frac%7BC%7D%7BH%7D&amp;space;-" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">equation</figcaption><p></p>
+</figure>
+</div>
+<p>The unit of magnetic field intensity, strictly flux density, most commonly used in geomagnetism is the Tesla. At the Earth’s surface the total intensity varies from 22,000 nanotesla (nT) to 67,000 nT. The units of D and I are degrees.</p>
 
 
+</section>
 </main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
